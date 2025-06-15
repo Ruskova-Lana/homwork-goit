@@ -1,4 +1,4 @@
-# exercise_1 
+### exercise_1 
 from datetime import datetime
 def get_days_from_today(date):
     try:
@@ -16,7 +16,7 @@ print(get_days_from_today("wrong-format"))                                      
 
 
 
-# exercise_2
+### exercise_2
 import random
 def get_numbers_ticket(min, max, quantity):
     if not (1 <= min <= max <= 1000) or \
@@ -30,8 +30,7 @@ print("Ваші лотерейні числа:", lottery_numbers)
 
 
 
-
-# exercise_3
+### exercise_3
 import re
 def normalize_phone(phone_number):
     digits = re.sub(r'\D', '', phone_number)                                  # Видаляємо всі символи, крім цифр
@@ -61,9 +60,8 @@ print("Нормалізовані номери телефонів для SMS-р�
 
 
 
-# exercise_4
+### exercise_4
 from datetime import datetime, timedelta
-
 def get_upcoming_birthdays(users):
     today = datetime.today().date()
     in_7_days = today + timedelta(days=7)
@@ -83,7 +81,6 @@ def get_upcoming_birthdays(users):
                 "name": user["name"],
                 "congratulation_date": congratulation_date.strftime("%Y.%m.%d")
             })
-
     return upcoming
 users = [
     {"name": "John Doe", "birthday": "1985.01.23"},
