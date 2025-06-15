@@ -1,19 +1,18 @@
 # exercise_1 
 from datetime import datetime
-
 def get_days_from_today(date):
     try:
-        input_date = datetime.strptime(date, '%Y-%m-%d').date()  # Перетворення рядка у дату
-        today = datetime.today().date()                          # Поточна дата
-        delta = today - input_date                               # Обчислення різниці у днях
+        input_date = datetime.strptime(date, '%Y-%m-%d').date()                 # Перетворення рядка у дату
+        today = datetime.today().date()                                         # Поточна дата
+        delta = today - input_date                                              # Обчислення різниці у днях
         return delta.days
     except ValueError:
         print("Неправильний формат дати. Використовуйте 'РРРР-ММ-ДД'.")         # Обробка неправильного формату дати
         return None
 
-print(get_days_from_today("2021-10-09"))    # Може повернути, наприклад, -1344 (залежить від поточної дати)
-print(get_days_from_today("2025-06-01"))    # Наприклад, 13 (якщо сьогодні 2025-06-14)
-print(get_days_from_today("wrong-format"))  # Виведе повідомлення про помилку і поверне None
+print(get_days_from_today("2021-10-09"))                                        # Може повернути, наприклад, -1344 (залежить від поточної дати)
+print(get_days_from_today("2025-06-01"))                                        # Наприклад, 13 (якщо сьогодні 2025-06-14)
+print(get_days_from_today("wrong-format"))                                      # Виведе повідомлення про помилку і поверне None
 
 
 
@@ -35,8 +34,8 @@ print("Ваші лотерейні числа:", lottery_numbers)
 # exercise_3
 import re
 def normalize_phone(phone_number):
-    digits = re.sub(r'\D', '', phone_number)  # Видаляємо всі символи, крім цифр
-    if digits.startswith('380'):              # Обробка номера з міжнародним кодом
+    digits = re.sub(r'\D', '', phone_number)                                  # Видаляємо всі символи, крім цифр
+    if digits.startswith('380'):                                              # Обробка номера з міжнародним кодом
         return '+{}'.format(digits)
     elif digits.startswith('0'):
         return '+38{}'.format(digits)
