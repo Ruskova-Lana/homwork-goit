@@ -1,3 +1,6 @@
 .venv/
 __pycache__
 .playground/
+test.py 
+test2.py
+
